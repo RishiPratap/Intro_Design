@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3574/3574750.png" type="image/png">
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -79,7 +78,7 @@
         font-weight: 700;
         text-align: center;
         height: 300px;
-        width: 50%;
+        width: 80vh;
         background: rgba(255, 255, 255, 0.01);
         border-radius: 16px;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -102,18 +101,61 @@
             flex-direction: column;
         }
         section{
-            background:linear-gradient(10deg, rgb(45, 46, 46) 43%,rgb(7, 7, 7) 43%);
+            background:linear-gradient(10deg, rgb(127, 11, 235) 43%,rgb(11, 11, 11) 43%);
         }
         .stylish{
-            color: white; 
-   font: bold 52px Helvetica, Arial, Sans-Serif;
-   text-shadow: 1px 1px #fe4902, 
+        color: white; 
+        font: bold 52px 'Ubuntu', sans-serif;
+        text-shadow: 1px 1px #fe4902, 
                 2px 2px #fe4902, 
                 3px 3px #fe4902;
+        }
+        .stylish1{
+        color: white; 
+        font: bold 32px 'Ubuntu', sans-serif;
+        text-shadow: 1px 1px #fe4902, 
+                2px 2px #fe4902, 
+                3px 3px #fe4902;
+                text-align: center;
         }
         #s-page-1{
             height: 500px;
         }
+        .gallery {
+             background: #EEE;
+        }
+
+        .gallery{
+             height: 500px;
+             width: 100%;
+             padding:0px;
+        }
+
+        .gallery-cell {
+        width: 80%;
+        border-radius: 10px;
+        height: 500px;
+        padding: 20px;
+        margin-right: 10px;
+        background: rgb(172, 136, 204);
+        counter-increment: gallery-cell;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+.card{
+        height: 300px;
+        width: 80vh;
+        background: rgba(255, 255, 255, 0.01);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
     </style>
 </head>
 <body>
@@ -138,7 +180,15 @@
         <div class="reader">
             <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_4ggqrsq6.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
         </div>
+        
     </section>
+    <div class="gallery js-flickity"
+  data-flickity-options='{ "wrapAround": true }'>
+  <div class="gallery-cell"><div class="card"><p class="stylish1">Accept Camera access and wait for the webcam to load.</p></div></div>
+  <div class="gallery-cell"><div class="card"><p class="stylish1">Perform the same pose as the given below.</p></div></div>
+  <div class="gallery-cell"><div class="card"><p class="stylish1">Sign Up to your account and access to unlimited features of YOG.</p></div></div>
+  <div class="gallery-cell"><div class="card"><p class="stylish1">Press get Started to continue.</p></div></div>
+</div>
     <section id="s-page-1">
         <div class="msg">
             <p class="msg-text">Welcome to very Worlds First A.I enabled YOGA training app </p>
