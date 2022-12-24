@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3574/3574750.png" type="image/png">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2865/2865893.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js"></script>
-    <title>Yog Intro</title>
+    <title>PRIMS: The A.I Image Generator</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
         *{
@@ -77,8 +77,10 @@
         font-size: 2rem;
         font-weight: 700;
         text-align: center;
-        height: 300px;
-        width: 50vh;
+        padding: 10px;
+        height: 250px;
+        min-width: 50vh;
+        max-width: 100vh;
         background: rgba(255, 255, 255, 0.01);
         border-radius: 16px;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -143,7 +145,7 @@
         justify-content: center;
         align-items: center;
 }
-.card{
+        .card{
         height: 300px;
         width: 80vh;
         background: rgba(255, 255, 255, 0.01);
@@ -156,9 +158,30 @@
         justify-content: center;
         align-items: center;
 }
+#loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #222;
+    transition: .5s;
+}
+#myDiv {
+    transition: .5s;
+}
     </style>
 </head>
-<body>
+<body onload="myFunction()">
+    <div id="loader">
+        <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_pcyqh4qg.json"  background="transparent"  speed="1"  style="width: 250px; height: 250px;"  loop  autoplay></lottie-player>
+    </div>
+    <div id="myDiv">
     <section>
         <div class="layer layer1"></div>
         <div class="layer layer2"></div>
@@ -167,7 +190,7 @@
         <div class="layer layer5"></div>
         <div class="layer layer6"></div>
         <div class="msg">
-            <p class="msg-text">Welcome to very Worlds First A.I enabled YOGA training app </p>
+            <p class="msg-text">Prims is the A.I based Image Generator that's generate images from given description.</p>
         </div>
     </section>
     <section>
@@ -175,25 +198,38 @@
             <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_PBgNop.json"  background="transparent"  speed="1"  style="width: 200px; height: 250px;"  loop  autoplay></lottie-player>
         </div>
         <div class="read">
-            <marquee><p class="stylish">Welcome to very Worlds First A.I enabled YOGA training app </p></marquee>
+            <marquee><p class="stylish">Prims is the A.I based Image Generator that's generate images from given description.</p></marquee>
         </div>
         <div class="reader">
-            <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_4ggqrsq6.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+            <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_itilDAyVNt.json"  background="transparent"  speed="1"  style="width: 250px; height: 250px;"  loop  autoplay></lottie-player>
         </div>
         
     </section>
     <div class="gallery js-flickity"
   data-flickity-options='{ "wrapAround": true }'>
-  <div class="gallery-cell"><div class="card"><p class="stylish1">Accept Camera access and wait for the webcam to load.</p></div></div>
-  <div class="gallery-cell"><div class="card"><p class="stylish1">Perform the same pose as the given below.</p></div></div>
-  <div class="gallery-cell"><div class="card"><p class="stylish1">Sign Up to your account and access to unlimited features of YOG.</p></div></div>
-  <div class="gallery-cell"><div class="card"><p class="stylish1">Press get Started to continue.</p></div></div>
+  <div class="gallery-cell"><div class="card"><p class="stylish1">PRIMS is the AI image generator from description.</p></div></div>
+  <div class="gallery-cell"><div class="card"><p class="stylish1">Enter Text in the textbox.</p></div></div>
+  <div class="gallery-cell"><div class="card"><p class="stylish1">Then Press Enter then AI will process the text.</p></div></div>
+  <div class="gallery-cell"><div class="card"><p class="stylish1">Then generate the image from description.</p></div></div>
 </div>
     <section id="s-page-1">
         <div class="msg">
-            <p class="msg-text">Welcome to very Worlds First A.I enabled YOGA training app </p>
+            <p class="msg-text">Prims is the A.I based Image Generator that's generate images from given description.</p>
         </div>
     </section>
+</div>
+<script>
+    var myVar;
+    
+    function myFunction() {
+      myVar = setTimeout(showPage, 3000);
+    }
+    
+    function showPage() {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("myDiv").style.display = "block";
+    }
+    </script>
     <script>
         VANTA.DOTS({
           el: "#s-page-1",
